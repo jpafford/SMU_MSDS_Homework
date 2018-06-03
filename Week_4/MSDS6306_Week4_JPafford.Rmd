@@ -59,7 +59,7 @@ par(las=2)
 barplot(major_count, main="Category of major from Carnevale et al", horiz=TRUE, xlab="Count", ylab="Majors", col="red")
 ```
 
-![2C](C:\Users\jodip\Documents\JPafford_DDS\SMU_MSDS_Homework\Week_4\2cImage.jpeg)
+![2C](/Users/jodip/Documents/JPafford_DDS/SMU_MSDS_Homework/Week_4/2cImage.jpeg)
 
 ###D
 
