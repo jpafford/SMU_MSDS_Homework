@@ -3,7 +3,7 @@ Homework Repo for my DataScience@SMU work
 
 This repository will contain homework files as required by my MSDS program, DataScience@SMU.
 
-### Topics:
+### Topics/Folders:
 
 - Week 4 - RMarkdown File for Homework
 
