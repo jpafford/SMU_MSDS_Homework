@@ -15,9 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 A.
 
 ```{r 1a, echo=TRUE}
-setwd("C:/Users/jodip/Documents/JPafford_DDS")
-df <- read.table("yob2016.txt", sep=";", header=FALSE)
-names(df) <- c("First_Name", "Gender", "Number_of_Children")
+library(RCurl)
+df <- getURL("https://github.com/jpafford/SMU_MSDS_Homework/blob/master/Week_5/yob2016.txt", col.names=c("First_Name", "Gender", "Number_of_Children") )
+
 ```
 
 B. 
@@ -96,102 +96,7 @@ final_10_Girl
 write.csv(final_10_Girl, file= "Top 10 Girl Names 15-16", row.names=FALSE)
 ```
 
-=======
----
-title: "DDS_Week5_JPafford"
-author: "Jodi Pafford"
-date: "June 6, 2018"
-output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+###Question 4
 
-# Week 5
-###Question 1
-A.
-
-```{r 1a, echo=TRUE}
-setwd("C:/Users/jodip/Documents/JPafford_DDS")
-df <- read.table("yob2016.txt", sep=";", header=FALSE)
-names(df) <- c("First_Name", "Gender", "Number_of_Children")
-```
-
-B. 
-
-```{r 1b, echo=TRUE}
-summary(df)
-str(df)
-```
-
-C. 
-
-```{r 1c, echo=TRUE}
-grep("yyy$", df$First_Name, value=TRUE)
-```
-
-D. 
-
-```{r 1d, echo=TRUE}
-y2016 <- df[ !grepl("Fionayyy", df$First_Name), ]
-```
-
-###Question 2
-
-A.
-
-```{r 2a, echo=TRUE}
-y2015 <- read.table("yob2015.txt", sep=",", header=FALSE)
-names(y2015) <- c("First_Name", "Gender", "Number_of_Children")
-```
-
-B.
-
-```{r 2b, echo=TRUE}
-tail(y2015, 10)
-```
-I looks like all the last 10 names each have 5 occurances.  That may be a coincidence or an error with the data.  They are also all male.
-
-C.
-
-```{r 2c, echo=TRUE}
-final <- merge(y2015, y2016, by = "First_Name")
-any(is.na(final))
-head(final)
-dim(final)
-```
-
-###Question 3
-
-A.
-
-``` {r 3a, echo=TRUE}
-final$Total <- (final$Number_of_Children.x + final$Number_of_Children.y)
-sum(final$Total)
-```
-
-B. 
-
-```{r 3b, echo=TRUE}
-library(dplyr)
-final <- arrange(final, -Total)
-head(final, 10)
-```
-
-C. 
-
-```{r 3c, echo=TRUE}
-final_Girl <- final[ !grepl("M", final$Gender.x), ]
-head(final_Girl, 10)
-```
-
-D. 
-
-```{r 3d, echo=TRUE}
-final_10_Girl <- final_Girl[c(1:10),c(1, 6) ]
-final_10_Girl
-write.csv(final_10_Girl, file= "Top 10 Girl Names 15-16", row.names=FALSE)
-```
-
->>>>>>> 5f8657d8c92651dc5588caf3752a80231a0d35ae
+<https://github.com/jpafford/SMU_MSDS_Homework/tree/master/Week_5>
